@@ -10,7 +10,7 @@ In order to put my skills into practice i have created this ATM-app. In the proj
   * While
 etc.
 
-## What the app do
+## What does the app do
 
 The app gives the user the option to create a database of bank accounts and do different transactions. At the begging the user will be asked if he wants to log in with an ID or to create an account. If he just starts the programm, there are no accounts in the database, so the user's only option will be to create a new account. Each account has gets:
   * title - provided by the user
@@ -29,3 +29,11 @@ after an account is created, the user can choose from 5 actions:
 The user can do multiple actions before logging out. After this, there is the option the continue the application and add other users, so they can transfer funds between each other.
 
 If there is no such desire, the app can be terminated.
+
+## How does the app work
+
+The app is centered around the Class - BankAccount. Each new Bank account Object will be stored in a LinkedHashMap, so it can be reach later. 
+
+When a new account is created it gets an ID. this is a static int in the BankAccount class that increases with 1 each time a new account is created and the value of this int is given to the account as an ID, ensuring that every single account will have an unique ID. 
+
+I have created several methods to help against repetiton of code. Most of them are to make sure, that we recieve the requested input for a specific action.
