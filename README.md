@@ -32,7 +32,7 @@ If there is no such desire, the app can be terminated.
 
 ## How does the app work
 
-The app is centered around the Class - BankAccount. Each new Bank account Object will be stored in a LinkedHashMap, so it can be reach later. 
+The app is centered around the Class - BankAccount. Each new Bank account Object will be stored in a LinkedHashMap, so it can be reached later. 
 
 When a new account is created it gets an ID. this is a static int in the BankAccount class that increases with 1 each time a new account is created and the value of this int is given to the account as an ID, ensuring that every single account will have an unique ID. 
 
