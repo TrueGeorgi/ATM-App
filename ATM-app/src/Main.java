@@ -12,8 +12,9 @@ public class Main {
         String continueSimulation = "yes";
 
         while (continueSimulation.equals("yes")) {
-
+            System.out.println();
             System.out.println("Hello. What would you like to do?");
+            System.out.println();
             System.out.println("A. Log in with your ID");
             System.out.println("B. Create an account");
             String startInput = twoOptionsCheck("a", "b");
@@ -130,7 +131,7 @@ public class Main {
     public static void newAccount(Map<Integer, BankAccount> accountsDatabase) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("How should we address you? Mr. Mrs. or Mx. ?");
+        System.out.println("How should we address you? Mr, Mrs, or Mx ?");
         String title = correctTitleInput();
         System.out.print("Enter your first name: ");
         String firstName = scanner.nextLine();
@@ -174,6 +175,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine().toLowerCase();
+        System.out.println();
 
         while (!input.equals(optionOne) && !input.equals(optionTwo)) {
             System.out.println("Only " + optionOne + " or " + optionTwo + ", please.");
