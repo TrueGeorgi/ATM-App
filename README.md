@@ -37,3 +37,4 @@ The app is centered around the Class - BankAccount. Each new Bank account Object
 When a new account is created it gets an ID. this is a static int in the BankAccount class that increases with 1 each time a new account is created and the value of this int is given to the account as an ID, ensuring that every single account will have an unique ID. 
 
 I have created several methods to help against repetiton of code. Most of them are to make sure, that we recieve the requested input for a specific action.
+ 
