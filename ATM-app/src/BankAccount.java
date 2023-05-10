@@ -53,7 +53,7 @@ public class BankAccount {
     }
 
     String balanceEnquiry () {
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("0.00");
         df.setRoundingMode(RoundingMode.HALF_DOWN);
         String formattedBalance = df.format(balance);
         String output = formattedBalance + " euro";

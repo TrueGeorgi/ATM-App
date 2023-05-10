@@ -20,10 +20,12 @@ public class Main {
             String startInput = twoOptionsCheck("a", "b");
 
             String inputID = "";
+            boolean newAccount = false;
 
             if (startInput.equals("b")) {
                 newAccount(accountsDatabase);
                 inputID = String.valueOf(accountsDatabase.size());
+                newAccount = true;
             } else {
                 System.out.println("Please enter your ID");
                 inputID = scanner.nextLine();
@@ -46,10 +48,12 @@ public class Main {
 
             BankAccount currentUser = accountsDatabase.get(Integer.parseInt(inputID));
             System.out.println();
-            System.out.println("Welcome "
-                    + currentUser.customersTitle
-                    + ". " + currentUser.getCustomersFamilyName());
-            System.out.println();
+            if (!newAccount) {
+                System.out.println("Welcome "
+                        + currentUser.customersTitle
+                        + ". " + currentUser.getCustomersFamilyName());
+                System.out.println();
+            }
 
             String input = whatActionToBeDone();
 
@@ -60,7 +64,11 @@ public class Main {
                 switch (input) {
                     case "1":
                         System.out.println("How much would you like to withdraw?");
-                        double withdrawAmount = Double.parseDouble(scanner.nextLine());
+                        String withdrawAmountString = scanner.nextLine()
+                                .replace(" ", "")
+                                .replace(",", "")
+                                .replace(".", "");
+                        double withdrawAmount = Double.parseDouble(withdrawAmountString);
                         currentUser.withdraw(withdrawAmount);
                         System.out.println("Would you like to take another action?");
                         answer = twoOptionsCheck("yes", "no");
@@ -70,7 +78,11 @@ public class Main {
                         break;
                     case "2":
                         System.out.println("How much would you like to deposit?");
-                        double depositAmount = Double.parseDouble(scanner.nextLine());
+                        String depositAmountString = scanner.nextLine()
+                                .replace(" ", "")
+                                .replace(",", "")
+                                .replace(".", "");
+                        double depositAmount = Double.parseDouble(depositAmountString);
                         currentUser.deposit(depositAmount);
                         System.out.println("Would you like to take another action?");
                         answer = twoOptionsCheck("yes", "no");
@@ -103,7 +115,11 @@ public class Main {
                             String nameToTransferTo = accountsDatabase.get(idToTransferTo).customersFirstName;
                             String familyNameToTransferTo = accountsDatabase.get(idToTransferTo).customersFamilyName;
                             System.out.println("How much would you like to transfer to " + nameToTransferTo + " " + familyNameToTransferTo + "?");
-                            double toTransfer = Double.parseDouble(scanner.nextLine());
+                            String transferAmountString = scanner.nextLine()
+                                    .replace(" ", "")
+                                    .replace(",", "")
+                                    .replace(".", "");
+                            double toTransfer = Double.parseDouble(transferAmountString);
                             currentUser.withdraw(toTransfer);
                             accountsDatabase.get(idToTransferTo).deposit(toTransfer);
                             System.out.println("Transaction completed.");
@@ -137,8 +153,9 @@ public class Main {
         String firstName = scanner.nextLine();
         System.out.print("Enter your family name: ");
         String familyName = scanner.nextLine();
+        System.out.println();
         BankAccount newUser = new BankAccount(title, firstName, familyName);
-        System.out.println("Welcome! Your ID is: " + newUser.getCustomerID());
+        System.out.println("Welcome " + title +". " + familyName + "! Your ID is: " + newUser.getCustomerID());
         accountsDatabase.put(newUser.getCustomerID(), newUser);
     }
 
