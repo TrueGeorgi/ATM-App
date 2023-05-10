@@ -65,9 +65,7 @@ public class Main {
                     case "1":
                         System.out.println("How much would you like to withdraw?");
                         String withdrawAmountString = scanner.nextLine()
-                                .replace(" ", "")
-                                .replace(",", "")
-                                .replace(".", "");
+                                .replace(" ", "");
                         double withdrawAmount = Double.parseDouble(withdrawAmountString);
                         currentUser.withdraw(withdrawAmount);
                         System.out.println("Would you like to take another action?");
@@ -79,9 +77,7 @@ public class Main {
                     case "2":
                         System.out.println("How much would you like to deposit?");
                         String depositAmountString = scanner.nextLine()
-                                .replace(" ", "")
-                                .replace(",", "")
-                                .replace(".", "");
+                                .replace(" ", "");
                         double depositAmount = Double.parseDouble(depositAmountString);
                         currentUser.deposit(depositAmount);
                         System.out.println("Would you like to take another action?");
@@ -116,9 +112,7 @@ public class Main {
                             String familyNameToTransferTo = accountsDatabase.get(idToTransferTo).customersFamilyName;
                             System.out.println("How much would you like to transfer to " + nameToTransferTo + " " + familyNameToTransferTo + "?");
                             String transferAmountString = scanner.nextLine()
-                                    .replace(" ", "")
-                                    .replace(",", "")
-                                    .replace(".", "");
+                                    .replace(" ", "");
                             double toTransfer = Double.parseDouble(transferAmountString);
                             currentUser.withdraw(toTransfer);
                             accountsDatabase.get(idToTransferTo).deposit(toTransfer);
