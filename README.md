@@ -47,5 +47,5 @@ I have created several methods to help against a repetition of code. Most of the
   * If the user has an empty Bank account and decided to do the "Balance inquiry" action, the amount would have shown ".00" instead of "0.00".
   * Added a personalized greeting after the account creation. 
   * The user was greeted twice after an account creation.
-  * If the user tried to withdraw, deposit or transfer a 5 digit sum, and he wrote it with a separation after the hunderts, like this: "10 000", an error would occur. Now the input can be either with space, comma, dot or no space at all.
+  * If the user tried to withdraw, deposit or transfer a 5+ digit sum, and he wrote it with a separation after the hunderts, like this: "10 000", an error would occur. Now the input can be either with space, comma, dot or no space at all.
 
