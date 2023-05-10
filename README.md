@@ -42,6 +42,8 @@ When a new account is created it gets an ID. this is a static int in the BankAcc
 I have created several methods to help against a repetition of code. Most of them are to make sure, that we receive the requested input for a specific action.
 
  ## Update history
+ 
+ ### 10.05.2023 Update
   * If the user has an empty Bank account and decided to do the "Balance inquiry" action, the amount would have shown ".00" instead of "0.00".
   * Added a personalized greeting after the account creation. 
   * The user was greeted twice after an account creation.
